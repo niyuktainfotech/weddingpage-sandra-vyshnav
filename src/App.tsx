@@ -4,6 +4,13 @@ import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const images = [
+    "/image-1.jpg",
+    "/image-2.jpg",
+    "/image-3.jpg",
+    "/image-4.jpg"
+];
+
 interface TimeLeft {
   days: number;
   hours: number;
@@ -74,6 +81,52 @@ const App: React.FC = () => {
       easing: "ease-in-out",
     });
   }, []);
+
+  // gallery section
+
+  //  const [currentIndex, setCurrentIndex] = useState(0);
+
+  //   const nextSlide = () => {
+  //       setCurrentIndex((prev) =>
+  //           (prev + 1) % images.length
+  //       );
+  //   };
+
+  //   const prevSlide = () => {
+  //       setCurrentIndex((prev) =>
+  //           (prev - 1 + images.length) % images.length
+  //       );
+  //   };
+
+  //   const visibleImages = [
+  //       images[currentIndex],
+  //       images[(currentIndex + 1) % images.length],
+  //       images[(currentIndex + 2) % images.length],
+  //   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) =>
+            (prev - 1 + images.length) % images.length
+        );
+    };
+
+    const getPosition = (index: number) => {
+        if (index === currentIndex) return "active";
+
+        if (index === (currentIndex - 1 + images.length) % images.length)
+            return "prev";
+
+        if (index === (currentIndex + 1) % images.length)
+            return "next";
+
+        return "hidden";
+}
 
   return (
 
@@ -198,7 +251,13 @@ const App: React.FC = () => {
           <span className="sparkle sparkle-4">✧</span>
           <span className="sparkle sparkle-5">✦</span>
           <span className="sparkle sparkle-6">♡</span>
+          <span className="sparkle sparkle-7">♡</span>
+          <span className="sparkle sparkle-8">♡</span>
+          <span className="sparkle sparkle-9">✧</span>
+          <span className="sparkle sparkle-10">✦</span>
         </div>
+
+         
 
         <div className="couple-image-wrapper" data-aos="zoom-in">
 
@@ -238,6 +297,74 @@ const App: React.FC = () => {
         </div>
 
       </section>
+
+      {/* GALLERY SECTION */}
+
+      <section className="memory-gallery" data-aos="fade-up">
+
+            <div className="gallery-heading">
+                <h2>OUR MOMENTS</h2>
+                <div className="heading-decoration">
+                    <span></span>
+                    <i>◇</i>
+                    <span></span>
+                </div>
+            </div>
+
+            <div className="carousel-container">
+
+                <div className="carousel-track">
+
+                    {images.map((image, index) => (
+                        <button
+                            key={image}
+                            className={`carousel-card ${getPosition(index)}`}
+                            onClick={() => setCurrentIndex(index)}
+                            aria-label={`View photograph ${index + 1}`}
+                            tabIndex={getPosition(index) === "hidden" ? -1 : 0}
+                        >
+                            <img src={image} alt={`Wedding memory ${index + 1}`} />
+                        </button>
+                    ))}
+
+                </div>
+
+            </div>
+
+            <div className="gallery-controls">
+
+                <button
+                    className="gallery-dot-arrow"
+                    onClick={prevSlide}
+                    aria-label="Previous image"
+                >
+                    ‹
+                </button>
+
+                <div className="gallery-dots">
+                    {images.map((image, index) => (
+                        <button
+                            key={`${image}-${index}`}
+                            className={`gallery-dot ${
+                                currentIndex === index ? "selected" : ""
+                            }`}
+                            onClick={() => setCurrentIndex(index)}
+                            aria-label={`Go to image ${index + 1}`}
+                        />
+                    ))}
+                </div>
+
+                <button
+                    className="gallery-dot-arrow"
+                    onClick={nextSlide}
+                    aria-label="Next image"
+                >
+                    ›
+                </button>
+
+            </div>
+
+        </section>
 
 
       {/* WHAT TO EXPECT / WEDDING CEREMONY */}
@@ -349,6 +476,49 @@ const App: React.FC = () => {
       </section>
 
 
+      {/* gallery section */}
+
+      {/* <section className="gallery-section">
+
+            <div className="container">
+
+                <h2 className="gallery-title">
+                    Our Memories
+                </h2>
+
+                <div className="gallery-wrapper">
+
+                    <button
+                        className="gallery-arrow left"
+                        onClick={prevSlide}
+                    >
+                        &#10094;
+                    </button>
+
+                    <div className="gallery-images">
+                        {visibleImages.map((image, index) => (
+                            <div className="gallery-item" key={`${currentIndex}-${index}`}>
+                                <img src={image} alt="Wedding memory" />
+                            </div>
+                        ))}
+                    </div>
+
+                    <button
+                        className="gallery-arrow right"
+                        onClick={nextSlide}
+                    >
+                        &#10095;
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section> */}
+
+        
+
+
       {/* VENUE / GETTING AROUND */}
 
       <section className="venue-section" id="venue">
@@ -447,8 +617,6 @@ const App: React.FC = () => {
           </h3>
 
         </div>
-
-
 
       </section>
 
