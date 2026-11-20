@@ -137,7 +137,7 @@ const App: React.FC = () => {
       <header className="wedding-header" data-aos="fade-down">
 
         <a href="#home" className="header-logo">
-          S <span>&</span> Y
+          S <span>&</span> V
         </a>
 
         <nav className="header-nav">
@@ -627,7 +627,7 @@ const App: React.FC = () => {
       <footer className="wedding-footer" data-aos="fade-up">
 
         <div className="footer-logo">
-          S <span>&</span> Y
+          S <span>&</span> V
         </div>
 
         <h3 className="footer-couple">
