@@ -1,0 +1,1017 @@
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f6f1;
+  color: #38332f;
+  width: 100%;
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.wedding-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  background: #f7f6f1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.wedding-header {
+  width: 100%;
+  min-height: 85px;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f6f1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(100, 80, 65, 0.12);
+}
+
+.header-logo {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #463b36;
+}
+
+.header-logo span {
+  color: #b9977f;
+  font-style: italic;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.header-nav a {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #544b45;
+  transition: 0.3s;
+}
+
+.header-nav a:hover {
+  color: #b9977f;
+}
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+
+.hero-section {
+  min-height: 600px;
+  padding: 90px 20px 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 950px;
+}
+
+.hero-small-text {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  color: #8f7a6f;
+}
+
+.hero-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #443a36;
+  margin-bottom: 65px;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title i {
+  font-weight: 400;
+}
+
+.hero-details {
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  line-height: 1.9;
+  color: #625951;
+}
+
+.hero-label {
+  font-weight: 600;
+}
+
+.countdown-section {
+  margin-top: 40px;
+}
+
+.countdown-heading {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #987e70;
+  margin-bottom: 20px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-item {
+  width: 85px;
+  min-height: 90px;
+  padding: 12px 5px;
+  border: 1px solid #d8c9bd;
+  background: #f1ece6;
+}
+
+.countdown-item h2 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #56453f;
+}
+
+.countdown-item span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #8b776b;
+}
+
+.wedding-started {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #92776a;
+}
+
+.hero-scroll {
+  margin-top: 45px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #8d786b;
+}
+
+.hero-scroll span {
+  font-size: 22px;
+}
+
+/* Countdown floating animation */
+
+.countdown-item {
+    animation: floatCounter 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Slightly different timing for each box */
+
+.countdown-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.countdown-item:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.countdown-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.countdown-item:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes floatCounter {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    color: #654015;
+    opacity: 0.5;
+    animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    top: 15%;
+    left: 12%;
+    font-size: 22px;
+}
+
+.sparkle-2 {
+    top: 28%;
+    right: 15%;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+.sparkle-3 {
+    bottom: 20%;
+    left: 20%;
+    font-size: 17px;
+    animation-delay: 2s;
+}
+
+.sparkle-4 {
+    top: 65%;
+    right: 12%;
+    font-size: 24px;
+    animation-delay: 0.5s;
+}
+
+.sparkle-5 {
+    top: 12%;
+    right: 35%;
+    font-size: 14px;
+    animation-delay: 1.5s;
+}
+
+.sparkle-6 {
+    bottom: 15%;
+    right: 30%;
+    font-size: 23px;
+    animation-delay: 2.5s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(20deg);
+        opacity: 0.8;
+    }
+}
+
+/* ==============================
+   COUPLE SECTION
+============================== */
+
+.couple-section {
+  padding: 35px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.couple-image-wrapper {
+  width: 268px;
+  height: 364px;
+  overflow: hidden;
+  border-radius: 120px 120px 0 0;
+  margin-bottom: 30px;
+}
+
+.couple-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.couple-content {
+  max-width: 560px;
+}
+
+.section-subtitle {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #a88b78;
+  margin-bottom: 18px;
+}
+
+.couple-content h2,
+.venue-content h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 43px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #3d3632;
+}
+
+.couple-description {
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 440px;
+  margin: 20px auto;
+  color: #6b625c;
+}
+
+.couple-names {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  color: #9b7d6d;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.couple-names span {
+  color: #bba18d;
+}
+
+
+/* ==============================
+   WHAT TO EXPECT SECTION
+============================== */
+
+.expect-section {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.expect-background {
+  height: 430px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.expect-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.expect-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(20, 25, 18, 0.62),
+      rgba(20, 25, 18, 0.05));
+}
+
+.expect-heading {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.expect-heading p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.expect-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+
+/* EVENT CARD */
+
+.event-card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: -75px;
+  position: relative;
+  z-index: 2;
+}
+
+.event-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 45px 55px;
+  text-align: center;
+  background: #f9f7f2;
+  border: 1px solid #d9cbbd;
+  box-shadow: 0 12px 35px rgba(54, 43, 34, 0.09);
+}
+
+.event-number {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #a88b78;
+}
+
+.event-decoration {
+  font-size: 25px;
+  color: #b89b82;
+  margin: 15px 0;
+}
+
+.event-card h2 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  font-weight: 400;
+  color: #443b36;
+}
+
+.event-description {
+  max-width: 430px;
+  margin: 15px auto 30px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #72675f;
+}
+
+.event-details {
+  text-align: left;
+  max-width: 420px;
+  margin: auto;
+}
+
+.event-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 17px 0;
+  border-top: 1px solid #e3d9cf;
+}
+
+.detail-icon {
+  font-size: 22px;
+  color: #a88b78;
+  width: 25px;
+  text-align: center;
+}
+
+.event-detail-item h4 {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a18777;
+  margin-bottom: 7px;
+}
+
+.event-detail-item p {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4e443e;
+}
+
+.event-map-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 27px;
+  background: #b69a88;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.event-map-button:hover {
+  background: #887063;
+  color: white;
+}
+
+
+/* ==============================
+   VENUE SECTION
+============================== */
+
+.venue-section {
+  width: 100%;
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.venue-content {
+  flex: 1;
+  max-width: 430px;
+  text-align: center;
+}
+
+.venue-content h2 {
+  margin-bottom: 25px;
+}
+
+.venue-content>p:not(.section-subtitle) {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #6b625c;
+  margin-bottom: 18px;
+}
+
+.venue-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 25px;
+  background: #b69a88;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.venue-button:hover {
+  background: #887063;
+  color: white;
+}
+
+.venue-image-wrapper {
+  flex: 1;
+  max-width: 400px;
+  height: 470px;
+  overflow: hidden;
+  border-radius: 200px 200px 0 0;
+}
+
+.venue-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ==============================
+   RSVP SECTION
+============================== */
+
+.rsvp-section {
+  width: 100%;
+  height: 490px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.rsvp-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.rsvp-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(18, 20, 15, 0.72),
+      rgba(18, 20, 15, 0.12));
+}
+
+.rsvp-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 40px 8%;
+  max-width: 600px;
+}
+
+.rsvp-content>p:first-child {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.rsvp-content h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.rsvp-divider {
+  margin: 22px 0;
+  color: #d2b39e;
+  font-size: 25px;
+}
+
+.rsvp-names {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  color: #e2c8b4;
+}
+
+.rsvp-names i {
+  font-weight: 400;
+}
+
+.rsvp-content h3 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+.wedding-footer {
+    width: 100%;
+    padding: 55px 20px 35px;
+    text-align: center;
+    background: #f1eee7;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #51453e;
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: #b69a88;
+    font-style: italic;
+}
+
+.footer-couple {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+    color: #51453e;
+}
+
+.footer-divider {
+    width: 65px;
+    height: 1px;
+    background: #b69a88;
+    margin: 25px auto;
+}
+
+.footer-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 65px;
+    margin: 30px auto;
+    max-width: 850px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.footer-info span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a18777;
+}
+
+.footer-info p {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #51453e;
+    margin-top: 10px;
+}
+
+.footer-location {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid #b69a88;
+    color: #887063;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.footer-location:hover {
+    background: #b69a88;
+    color: white;
+}
+
+.footer-bottom {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #8b7a6f;
+}
+
+.footer-date {
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8b7a6f;
+}
+
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+  .wedding-header {
+    padding: 15px 5%;
+  }
+
+  .header-nav {
+    gap: 20px;
+  }
+
+  .venue-section {
+    padding: 70px 6%;
+    gap: 35px;
+  }
+
+  .venue-image-wrapper {
+    height: 400px;
+  }
+
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 600px) {
+
+  /* HEADER */
+
+  .wedding-header {
+    min-height: 75px;
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-logo {
+    font-size: 26px;
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .header-nav a {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+
+  /* HERO */
+
+  .hero-section {
+    min-height: auto;
+    padding: 85px 15px 65px;
+  }
+
+  .hero-small-text {
+    font-size: 9px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 9vw, 45px);
+    margin-bottom: 40px;
+  }
+
+  .hero-details {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+    line-height: 2;
+  }
+
+  .countdown-section {
+    margin-top: 35px;
+  }
+
+  .countdown-container {
+    gap: 7px;
+  }
+
+  .countdown-item {
+    width: 65px;
+    min-height: 75px;
+    padding: 10px 3px;
+  }
+
+  .countdown-item h2 {
+    font-size: 24px;
+  }
+
+  .countdown-item span {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+
+  /* COUPLE */
+
+  .couple-section {
+    padding: 65px 20px 75px;
+  }
+
+  .couple-image-wrapper {
+    width: 190px;
+    height: 230px;
+  }
+
+  .couple-content h2,
+  .venue-content h2 {
+    font-size: 34px;
+  }
+
+  .couple-description {
+    font-size: 12px;
+  }
+
+
+  /* EXPECT */
+
+  .expect-background {
+    height: 350px;
+  }
+
+  .expect-background img {
+    object-position: center;
+  }
+
+  .expect-heading {
+    left: 7%;
+  }
+
+  .expect-heading h2 {
+    font-size: 42px;
+  }
+
+  .event-card-wrapper {
+    margin-top: -45px;
+    padding: 0 15px;
+  }
+
+  .event-card {
+    padding: 35px 22px;
+  }
+
+  .event-card h2 {
+    font-size: 29px;
+  }
+
+  .event-description {
+    font-size: 12px;
+  }
+
+  .event-detail-item {
+    gap: 12px;
+  }
+
+  .event-detail-item p {
+    font-size: 14px;
+  }
+
+
+  /* VENUE */
+
+  .venue-section {
+    padding: 65px 22px;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .venue-content {
+    width: 100%;
+  }
+
+  .venue-image-wrapper {
+    width: 85%;
+    max-width: 320px;
+    height: 380px;
+  }
+
+
+  /* RSVP */
+
+  .rsvp-section {
+    min-height: 430px;
+    height: auto;
+  }
+
+  .rsvp-background {
+    object-position: 60% center;
+  }
+
+  .rsvp-overlay {
+    background: linear-gradient(90deg,
+        rgba(18, 20, 15, 0.75),
+        rgba(18, 20, 15, 0.30));
+  }
+
+  .rsvp-content {
+    padding: 50px 25px;
+  }
+
+  .rsvp-content h2 {
+    font-size: 36px;
+  }
+
+  .rsvp-content h3 {
+    font-size: 17px;
+  }
+
+
+  /* FOOTER */
+
+    .wedding-footer {
+        padding: 45px 20px 30px;
+    }
+
+    .footer-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .footer-info {
+        width: 100%;
+    }
+
+    .footer-info p {
+        font-size: 14px;
+    }
+
+}
