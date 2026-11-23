@@ -5,10 +5,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const images = [
-    "/image-1.jpg",
-    "/image-2.jpg",
-    "/image-3.jpg",
-    "/image-4.jpg"
+    "/img-1.jpeg",
+    "/img-3.jpeg",
+    "/img-4.jpeg",
+    "/img-6.jpeg"
 ];
 
 interface TimeLeft {
@@ -262,7 +262,7 @@ const App: React.FC = () => {
         <div className="couple-image-wrapper" data-aos="zoom-in">
 
           <img
-            src="/image-1.jpg"
+            src="/img-3.jpeg"
             alt="Sandra and Vyshak"
             className="couple-portrait"
           />
@@ -374,7 +374,7 @@ const App: React.FC = () => {
         <div className="expect-background" data-aos="fade-in">
 
           <img
-            src="/image-3.jpg"
+            src="/img-5.jpeg"
             alt="Sandra and Vyshak wedding photograph"
           />
 
@@ -560,7 +560,7 @@ const App: React.FC = () => {
         <div className="venue-image-wrapper" data-aos="fade-left">
 
           <img
-            src="/image-3.jpg"
+            src="/img-1.jpeg"
             alt="Wedding venue"
             className="venue-image"
           />
@@ -585,7 +585,7 @@ const App: React.FC = () => {
       <section className="rsvp-section" data-aos="fade-in">
 
         <img
-          src="/image-2.jpg"
+          src="/img-2.jpeg"
           alt="Sandra and Vyshak"
           className="rsvp-background"
         />
