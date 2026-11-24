@@ -10,7 +10,8 @@ const images = [
     "/img-1.jpeg",
     "/img-3.jpeg",
     "/img-4.jpeg",
-    "/img-6.jpeg"
+    "/img-6.jpeg",
+    "/img-8.png",
 ];
 
 interface TimeLeft {
@@ -279,7 +280,7 @@ const App: React.FC = () => {
         <div className="couple-image-wrapper" data-aos="zoom-in">
 
           <img
-            src="/img-3.jpeg"
+            src="img-7.png"
             alt="Sandra and Vyshak"
             loading="lazy"
             decoding="async"
@@ -549,7 +550,7 @@ const App: React.FC = () => {
 
       {/* VENUE / GETTING AROUND */}
 
-      <section className="venue-section" id="venue">
+      {/* <section className="venue-section" id="venue">
 
         <div className="venue-content" data-aos="fade-right">
 
@@ -607,7 +608,7 @@ const App: React.FC = () => {
           <span className="sparkle sparkle-6">♡</span>
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* RSVP / CLOSING SECTION */}
@@ -615,7 +616,7 @@ const App: React.FC = () => {
       <section className="rsvp-section" data-aos="fade-in">
 
         <img
-          src="/img-2.jpeg"
+          src="/img-8.png"
           alt="Sandra and Vyshak"
           loading="lazy"
           decoding="async"
@@ -666,7 +667,7 @@ const App: React.FC = () => {
           Sandra & Vyshak
         </h3>
 
-        <div className="footer-divider"></div>
+        {/* <div className="footer-divider"></div>
 
         <div className="footer-details">
 
@@ -689,16 +690,16 @@ const App: React.FC = () => {
             </p>
           </div>
 
-        </div>
+        </div> */}
 
-        <a
+        {/* <a
           href="https://www.google.com/maps/search/?api=1&query=TDM+Hall+Opp+Durbar+Hall+Ground+Ernakulam+South"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-location"
         >
           VIEW VENUE LOCATION ↗
-        </a>
+        </a> */}
 
         <div className="footer-divider"></div>
 
