@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const images = [
     "/img-1.jpeg",
-    "/img-3.jpeg",
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Smiling%20Couple%20by%20the%20Ocean-UAPOXP6jTtOYCjLZjqRRrNSJa0Yrnz.png",
     "/img-4.jpeg",
     "/img-5.jpeg",
     "/img-6.1.png",
