@@ -10,8 +10,11 @@ const images = [
     "/img-1.jpeg",
     "/img-3.jpeg",
     "/img-4.jpeg",
-    "/img-6.jpeg",
+    "/img-5.jpeg",
+    "/img-6.1.png",
     "/img-8.png",
+    "/img-11.png",
+    "/img-10.png"
 ];
 
 interface TimeLeft {
@@ -401,7 +404,7 @@ const App: React.FC = () => {
         <div className="expect-background" data-aos="fade-in">
 
           <img
-            src="/img-5.jpeg"
+            src="/img-10.png"
             alt="Sandra and Vyshak wedding photograph"
             loading="lazy"
             decoding="async"
