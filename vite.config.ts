@@ -21,7 +21,7 @@ const weddingSiteFiles = (): Plugin => ({
   transformIndexHtml(html) {
     const siteUrl = getSiteUrl()
     const canonicalUrl = `${siteUrl}/`
-    const imageUrl = `${siteUrl}/img-7.png`
+    const imageUrl = 'https://sandra-vyshak.vercel.app/img-8.png'
     const description = 'You are cordially invited to celebrate the wedding of Sandra and Vyshak. View ceremony details, venue, schedule, and share our special day.'
     const structuredData = [
       {
