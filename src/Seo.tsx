@@ -8,7 +8,7 @@ export function Seo() {
   useEffect(() => {
     const origin = window.location.origin;
     const canonicalUrl = `${origin}/`;
-    const imageUrl = `${origin}/img-3.jpeg`;
+    const imageUrl = "https://sandra-vyshak.vercel.app/img-8.png";
 
     document.title = title;
 
