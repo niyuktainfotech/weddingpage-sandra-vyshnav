@@ -1,5 +1,7 @@
 
 import React, { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Seo } from "./Seo";
 import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,6 +21,7 @@ interface TimeLeft {
 }
 
 const App: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
 
   // Wedding date: 3 January 2027, 11:10 AM IST
   const weddingDate = new Date("2027-01-03T11:10:00+05:30").getTime();
@@ -131,6 +134,7 @@ const App: React.FC = () => {
   return (
 
     <div className="wedding-page">
+      <Seo />
 
       {/* HEADER */}
 
@@ -140,7 +144,7 @@ const App: React.FC = () => {
           S <span>&</span> V
         </a>
 
-        <nav className="header-nav">
+        <nav className="header-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#couple">Our Story</a>
           <a href="#events">The Ceremony</a>
@@ -160,10 +164,16 @@ const App: React.FC = () => {
             WITH THE BLESSINGS OF OUR FAMILIES
           </p>
 
-          <h1 className="hero-title" data-aos="fade-up">
+          <motion.h1
+            className="hero-title"
+            data-aos="fade-up"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <span><i>SANDRA</i> & <i>VYSHAK</i></span>
             <span>ARE TYING THE KNOT!</span>
-          </h1>
+          </motion.h1>
 
           <div className="hero-details" data-aos="fade-up">
 
@@ -242,7 +252,14 @@ const App: React.FC = () => {
 
       {/* COUPLE INTRODUCTION */}
 
-      <section className="couple-section" id="couple">
+      <motion.section
+        className="couple-section"
+        id="couple"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+      >
 
         <div className="hero-sparkles">
           <span className="sparkle sparkle-1">✦</span>
@@ -264,6 +281,8 @@ const App: React.FC = () => {
           <img
             src="/img-3.jpeg"
             alt="Sandra and Vyshak"
+            loading="lazy"
+            decoding="async"
             className="couple-portrait"
           />
 
@@ -296,11 +315,18 @@ const App: React.FC = () => {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* GALLERY SECTION */}
 
-      <section className="memory-gallery" data-aos="fade-up">
+      <motion.section
+        className="memory-gallery"
+        data-aos="fade-up"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.12 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
 
             <div className="gallery-heading">
                 <h2>OUR MOMENTS</h2>
@@ -323,7 +349,7 @@ const App: React.FC = () => {
                             aria-label={`View photograph ${index + 1}`}
                             tabIndex={getPosition(index) === "hidden" ? -1 : 0}
                         >
-                            <img src={image} alt={`Wedding memory ${index + 1}`} />
+                            <img src={image} alt={`Wedding memory ${index + 1}`} loading="lazy" decoding="async" />
                         </button>
                     ))}
 
@@ -364,7 +390,7 @@ const App: React.FC = () => {
 
             </div>
 
-        </section>
+        </motion.section>
 
 
       {/* WHAT TO EXPECT / WEDDING CEREMONY */}
@@ -376,6 +402,8 @@ const App: React.FC = () => {
           <img
             src="/img-5.jpeg"
             alt="Sandra and Vyshak wedding photograph"
+            loading="lazy"
+            decoding="async"
           />
 
           <div className="expect-overlay"></div>
@@ -562,6 +590,8 @@ const App: React.FC = () => {
           <img
             src="/img-1.jpeg"
             alt="Wedding venue"
+            loading="lazy"
+            decoding="async"
             className="venue-image"
           />
 
@@ -587,6 +617,8 @@ const App: React.FC = () => {
         <img
           src="/img-2.jpeg"
           alt="Sandra and Vyshak"
+          loading="lazy"
+          decoding="async"
           className="rsvp-background"
         />
 
